@@ -26,7 +26,7 @@ def get_author(title):
     request = urllib.Request(host)
     try:
         response = urlib.urlopen(request)
-    except urllib2.HTTPError, error:
+    except urllib.HTTPError, error:
         contents = error.read()
         print ('Received error from Books API {}'.format(contents))
         return str(contents)
