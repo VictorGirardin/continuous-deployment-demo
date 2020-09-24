@@ -8,7 +8,8 @@
 # limitations under the License.
 
 
-import urllib
+import urllib.request
+import urllib.error
 
 import json
 from google.appengine.ext import vendor
@@ -26,7 +27,7 @@ def get_author(title):
     request = urllib.Request(host)
     try:
         response = urlib.urlopen(request)
-    except urllib.HTTPError, error:
+    except urllib.error.HTTPError as error:
         contents = error.read()
         print ('Received error from Books API {}'.format(contents))
         return str(contents)
