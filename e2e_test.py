@@ -14,7 +14,7 @@ import logging
 HOST='http://kappla.appspot.com'
 
 # [START e2e]
-response = urllib.urlopen("{}/get_author/ulysses".format(HOST))
+response = urllib.request.urlopen("{}/get_author/ulysses".format(HOST))
 html = response.read()
 assert(html == "James Joyce")
 # [END e2e]
